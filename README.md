@@ -14,4 +14,9 @@ npm run dev
 ```
 npm run lint
 ```
+### Run PM2
+
+```
+npm run pm2
+```
 

@@ -6,12 +6,12 @@ require('express-async-errors');
 const morgan = require('morgan'); // Mostra métricas de req e res
 const helmet = require('helmet');
 const routes = require('./routes'); // Importa o arquivo de rotas
-const logger = require('./helper/logger');
+const logger = require('./helper/logger'); //Formata os logs com certas propriedades
 
 const app = express(); // Define a função express() para uso mais simples
 
-app.use(helmet());
-app.use(cors());
+app.use(helmet()); //Define as mascaras do header das requisições
+app.use(cors()); //Permite o uso das middlewares
 app.use(express.json()); // Define req e res sempre no formato json
 app.use(morgan('dev')); // Configura o morgan com especificidade
 app.use(routes); // Define que a API use a rota routes

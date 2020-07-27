@@ -5,7 +5,7 @@ const jwtMid = require('./app/middlewares/jwt');
 
 routes.post('/login', userController.auth);
 
-// routes.use(jwtMid); //Implantação global da validação de token
+routes.use(jwtMid); //Implantação global da validação de token
 
 routes.post('/users', validatorMid.userCreateValidator, userController.store); // Importa do controller as funções da classe e os verbos HTTP e os middlewares
 routes.get('/users', userController.index); // Importa do controller as funções da classe e os verbos HTTP
