@@ -1,4 +1,4 @@
-const yup = require('yup');
+const yup = require('yup'); //Importa a biblioteca de gerenciamento de geração de máscaras
 
 class Validators {
   async userCreateValidator(req, res, next) {

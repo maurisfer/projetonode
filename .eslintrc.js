@@ -17,3 +17,4 @@ module.exports = {
     'no-unused-vars': [ 'error', { 'argsIgnorePatterns': 'next' } ],
   },
 };
+//Define os parâmetros de formatação de código utilizado em ambiente de desenvolvimento

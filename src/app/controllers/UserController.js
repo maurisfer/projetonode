@@ -1,5 +1,5 @@
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs'); //Importa a biblioteca de criptografia
+const jwt = require('jsonwebtoken'); //Importa a biblioteca de geração de tokens
 const UserModel = require('../models/user'); // Importa o Model para o Controller
 
 class UserController {
@@ -65,10 +65,10 @@ class UserController {
 
     const token = jwt.sign({ id }, process.env.JWT_KEY, {
       expiresIn: '1d',
-    }); // Usa a biblioteca jwt para criar token de validação
+    }); // Usa a biblioteca jwt para criar token de validação com o id do usuário e as informações vindas do header criptografadas pela senha process.env.JWT_KEY
 
     return res.json({ token });
   }
 } // Cria as regras de negócio que serão enviadas para o routes
 
-module.exports = new UserController(); // Exporta a classe criada para routes
+module.exports = new UserController(); // Exporta a classe criada para routes, usa-se o new para que se possa usar fora do arquivo de definição.
