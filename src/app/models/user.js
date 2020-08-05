@@ -27,7 +27,5 @@ UserSchema.pre('save', async (next) => {
   next();
 }); // pre - Informa que há uma ação antes de salvar o dado. Nesse caso, é salvo a senha criptografada pelo bcrypt para que não tenhamos acesso nem como administradores.
 
-
-
 const User = mongoose.model('User', UserSchema); // Cria o modelo a partir da configuração
 module.exports = User; // Exporta o modelo
