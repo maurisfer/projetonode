@@ -1,4 +1,6 @@
-const ChocSchema = mongoose.Schema(
+const mongoose = require('../../config/db'); // Importa o arquivo de configuração do banco de dados
+
+const ChocolateSchema = mongoose.Schema(
   {
     name: {
       type: String,
@@ -21,5 +23,5 @@ const ChocSchema = mongoose.Schema(
   }
 );
 
-const Chocolate = mongoose.model('Chocolate', ChocSchema);
+const Chocolate = mongoose.model('Chocolate', ChocolateSchema);
 module.exports = Chocolate; // Exporta o modelo
