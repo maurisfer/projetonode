@@ -3,6 +3,8 @@ const chocolateModel = require('../models/chocolates'); // Importa o Model para 
 class ChocolateController {
   // POST - Criar chocolate
   async store(req, res) {
+    const { key } = req.file;
+    req.body.image = `${process.env.URL_HOST}/images/${key}`;
     const chocolate = await chocolateModel.create(req.body); // Cria os dados dentro do banco de dados e aguarda o processamento do req.body de modo assincrono.
     return res.status(201).json({ chocolate });
   }
@@ -17,7 +19,9 @@ class ChocolateController {
   // PUT - Atualizar dados do chocolate
   async update(req, res) {
     const { id } = req.params;
-    const chocolate = await chocolateModel.findOneAndUpdate(id, req.body, { new: true });
+    const chocolate = await chocolateModel.findOneAndUpdate(id, req.body, {
+      new: true,
+    });
     return res.status(200).json({ chocolate }); // Retorna os dados atualizados para a resposta
   }
 
@@ -33,7 +37,6 @@ class ChocolateController {
     const allChocolate = await chocolateModel.find(); // Procura todos os dados no DB
     return res.status(200).json({ allChocolate }); // Responde com os dados solicitados
   }
-
 } // Cria as regras de negócio que serão enviadas para o routes
 
 module.exports = new ChocolateController(); // Exporta a classe criada para routes, usa-se o new para que se possa usar fora do arquivo de definição.

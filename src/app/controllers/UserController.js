@@ -1,7 +1,6 @@
-const bcrypt = require('bcryptjs'); //Importa a biblioteca de criptografia
-const jwt = require('jsonwebtoken'); //Importa a biblioteca de geração de tokens
+const bcrypt = require('bcryptjs'); //  Importa a biblioteca de criptografia
+const jwt = require('jsonwebtoken'); // mporta a biblioteca de geração de tokens
 const UserModel = require('../models/user'); // Importa o Model para o Controller
-
 
 class UserController {
   // POST - Criar usuário

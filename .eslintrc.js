@@ -4,7 +4,7 @@ module.exports = {
     es2020: true,
     node: true,
   },
-  extends: ['airbnb-base', 'prettier', ],
+  extends: ['eslint:recommended', 'airbnb-base', 'prettier'],
   plugins: ['prettier'],
   parserOptions: {
     ecmaVersion: 11,
@@ -14,7 +14,9 @@ module.exports = {
     'class-methods-use-this': 'off',
     'no-param-reassign': 'off',
     camelcase: 'off',
-    'no-unused-vars': [ 'error', { 'argsIgnorePatterns': 'next' } ],
+    'no-unesed-vars': [
+      'error',
+      { vars: 'all', args: 'after-used', argsIgnorePattern: 'next' },
+    ],
   },
 };
-//Define os parâmetros de formatação de código utilizado em ambiente de desenvolvimento

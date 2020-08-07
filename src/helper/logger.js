@@ -13,4 +13,4 @@ const logger = createLogger({
 });
 
 module.exports = logger;
-//Formata através da biblioteca winston a geração de logs personalizados de forma prática, com formato de data e hra, cores que distinguam as requisições e ainda permite a exportação do módulo para uso em todas as partes da aplicação.
+//  Formata através da biblioteca winston a geração de logs personalizados de forma prática, com formato de data e hra, cores que distinguam as requisições e ainda permite a exportação do módulo para uso em todas as partes da aplicação.

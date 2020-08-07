@@ -1,4 +1,4 @@
-const bcrypt = require('bcryptjs'); //Importa biblioteca de criptografia
+const bcrypt = require('bcryptjs'); //  Importa biblioteca de criptografia
 const mongoose = require('../../config/db'); // Importa o arquivo de configuração do banco de dados
 
 const UserSchema = mongoose.Schema(
