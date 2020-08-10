@@ -22,16 +22,16 @@ routes.put(
 ); // Altera os dados solicitados na requisição (exceto a senha, fazer endpoint e regras de negócio diferenciadas para "esqueci minha senha" e somente para "alteração de senha");
 routes.delete('/users/:id', userController.destroy); // Importa do controller as funções da classe e os verbos HTTP
 
-//  Rotas para chocolates
+/// rotas para chocolate
 routes.post(
   '/chocolates',
   multer(multerConfig).single('file'),
   chocolateController.store
-); // Importa do controller as funções da classe e os verbos HTTP e os middlewares
-routes.get('/chocolates', chocolateController.index); // Importa do controller as funções da classe e os verbos HTTP
-routes.get('/chocolates/:id', chocolateController.show); // Importa do controller as funções da classe e os verbos HTTP
-routes.put('/chocolates/:id', chocolateController.update); // Altera os dados solicitados na requisição (exceto a senha, fazer endpoint e regras de negócio diferenciadas para "esqueci minha senha" e somente para "alteração de senha");
-routes.delete('/chocolates/:id', chocolateController.destroy); // Importa do controller as funções da classe e os verbos HTTP
+);
+routes.get('/chocolates', chocolateController.index);
+routes.get('/chocolates:id', chocolateController.show);
+routes.put('/chocolates:id', chocolateController.update);
+routes.delete('/chocolates:id', chocolateController.destroy);
 
 module.exports = routes; // Exporta o arquivo routes para uso no app.js
 
