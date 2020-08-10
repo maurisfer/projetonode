@@ -11,13 +11,16 @@ const logger = require('./helper/logger'); // Formata os logs com certas proprie
 const app = express(); // Define a função express() para uso mais simples
 
 app.use(helmet()); // Define as mascaras do header das requisições
+app.use(cors()); // Permite o usode qualquer front-end para consumir a API
+
+app.use(express.json()); // Define req e res sempre no formato json
 app.use(express.urlencoded({ extended: true }));
+
 app.use(
   '/images',
   express.static(path.resolve(__dirname, '..', 'temp', 'uploads'))
 );
-app.use(cors()); // Permite o usode qualquer front-end para consumir a API
-app.use(express.json()); // Define req e res sempre no formato json
+
 app.use(morgan('dev')); // Configura o morgan com especificidade
 app.use(routes); // Define que a API use a rota routes
 

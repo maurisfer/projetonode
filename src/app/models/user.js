@@ -21,7 +21,7 @@ const UserSchema = mongoose.Schema(
   }
 ); // Configuração dos dados que vão para o banco de dados através do Schema da biblioteca mongoose
 
-UserSchema.pre('save', async (next) => {
+UserSchema.pre('save', async function (next) {
   const hashPass = await bcrypt.hash(this.pass, 10);
   this.pass = hashPass;
   next();

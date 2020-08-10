@@ -25,9 +25,9 @@ class UserController {
   async update(req, res) {
     const { id } = req.params;
 
-    const user = await UserModel.findOneAndUpdate(id, req.body, { new: true });
-
     delete req.body.pass; // Difere do user.pass = undefined; Porque exclui o paramêtro pass da requisição e não corre o perigo de alterar a senha errado no bd.
+
+    const user = await UserModel.findOneAndUpdate(id, req.body, { new: true });
 
     return res.status(200).json({ user }); // Retorna os dados atualizados para a resposta
   }
